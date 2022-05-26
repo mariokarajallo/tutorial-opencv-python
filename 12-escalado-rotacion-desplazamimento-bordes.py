@@ -24,12 +24,20 @@ FILE_NAME = 'image\cat.jpg'
 # except IOError:
 #     print ('Error while reading files !!!')
 
-#traduccion de imagenes
-M = np.float32([[1, 0, 100], [0, 1, 50]])
+# traduccion de imagenes
+# M = np.float32([[1, 0, 100], [0, 1, 50]])
+# try:
+#     img = cv2.imread(FILE_NAME)
+#     (rows, cols) = img.shape[:2]
+#     res = cv2.warpAffine(img, M, (cols, rows))
+#     cv2.imwrite('resultado-traduccion.jpg', res)
+# except IOError:
+#     print('Error while reading files !!!')
+
+# deteccion de bordes
 try:
     img = cv2.imread(FILE_NAME)
-    (rows, cols) = img.shape[:2]
-    res = cv2.warpAffine(img, M, (cols, rows))
-    cv2.imwrite('resultado-traduccion.jpg', res)
+    edges = cv2.Canny(img, 100, 200)
+    cv2.imwrite('resultado-deteccion-bordes.jpg', edges)
 except IOError:
     print('Error while reading files !!!')
