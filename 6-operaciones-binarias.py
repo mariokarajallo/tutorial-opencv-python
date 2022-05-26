@@ -3,10 +3,10 @@
 import cv2
 import numpy as np
 
-image1 = cv2.imread('input1.jpg')
-image2 = cv2.imread('input2.jpg')
+image1 = cv2.imread('image\square.jpg')
+image2 = cv2.imread('image\circle.jpg')
 
-dest_and = cv2.bitwise_and(img2, img1, mask=None)
+dest_and = cv2.bitwise_and(image2, image1, mask=None)
 
 cv2.imshow('Bitwise And', dest_and)
 
