@@ -15,12 +15,21 @@ FILE_NAME = 'image\cat.jpg'
 #     print('Error while reading files !!!')
 
 # Rotación de una imagen
-try: 
-    img = cv2.imread(FILE_NAME)
-    (rows, cols) = img.shape[:2] 
-    M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 45, 1) 
-    res = cv2.warpAffine(img, M,(cols, rows)) 
-    cv2.imwrite('resultado-rotacion.jpg', res) 
-except IOError: 
-    print ('Error while reading files !!!') 
+# try:
+#     img = cv2.imread(FILE_NAME)
+#     (rows, cols) = img.shape[:2]
+#     M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 45, 1)
+#     res = cv2.warpAffine(img, M,(cols, rows))
+#     cv2.imwrite('resultado-rotacion.jpg', res)
+# except IOError:
+#     print ('Error while reading files !!!')
 
+#traduccion de imagenes
+M = np.float32([[1, 0, 100], [0, 1, 50]])
+try:
+    img = cv2.imread(FILE_NAME)
+    (rows, cols) = img.shape[:2]
+    res = cv2.warpAffine(img, M, (cols, rows))
+    cv2.imwrite('resultado-traduccion.jpg', res)
+except IOError:
+    print('Error while reading files !!!')
