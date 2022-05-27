@@ -1,6 +1,6 @@
 import cv2
 
-image = cv2.imread('C:/Users/mario/Documents/Tutoriales/tutorial-opencv-python/rgb.jpg')
+image = cv2.imread('image/rgb.jpg')
 B, G, R = cv2.split(image)
 
 cv2.imshow("original", image)
