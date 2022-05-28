@@ -7,7 +7,7 @@ import numpy as np
 
 # path to input image is specified and
 # image is loaded with imread command
-image1 = cv2.imread('image/cat.jpg')
+image1 = cv2.imread('image/book2.jpg')
 
 # cv2.cvtColor is applied over the
 # image input with applied parameters
